@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  traefik:
+    image: traefik:1.7.12
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - gcmedia-net
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.toml:/traefik.toml
+      - ./acme.json:/acme.json
+networks:
+  gcmedia-net:
+    external: true

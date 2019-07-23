@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# But this file
+!.gitignore
+
+# And the Compose file
+!docker-compose.yml
